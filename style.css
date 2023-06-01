@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --cyan-opacity: hsl(178, 100%, 50%, .4);
+  --very-dark-blue: hsl(217, 54%, 11%);
+  /* main BG */
+  --medium-dark-blue: hsl(216, 50%, 16%);
+  /* card BG */
+  --dark-blue: hsl(215, 32%, 27%);
+  /* line */
+  --white: hsl(0, 0%, 100%);
+  --white-opacity: hsla(0, 0%, 100%, .5);
+
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.container {
+  background-color: var(--very-dark-blue);
+  display: grid;
+  height: 100vh;
+  place-items: center;
+  padding: 24px;
+}
+
+.card {
+  background-color: var(--medium-dark-blue);
+  border-radius: 8px;
+  box-shadow: 0px 8px 20px 12px hsl(217deg 53.78% 2%);
+  padding: 24px;
+  max-width: 352px;
+}
+
+.card__image {
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  --border-radius: 8px;
+}
+
+.card__image__main {
+
+  width: 100%;
+  border-radius: var(--border-radius);
+}
+
+.card__image:hover::after {
+  background-color: var(--cyan-opacity);
+  border-radius: var(--border-radius);
+  content: url(./images/icon-view.svg);
+  display: grid;
+  height: 100%;
+  place-items: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.card__title {
+  color: var(--white);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin: 24px 0 14px 0;
+}
+
+.card__description {
+  color: var(--white-opacity);
+  font-size: 1.6rem;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .card__description {
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+  }
+}
+
+.card__infos {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--dark-blue);
+}
+
+.card__infos__price {
+  align-items: center;
+  color: var(--cyan);
+  display: flex;
+  font-weight: 600;
+  gap: 4px;
+}
+
+.card__infos__timer {
+  align-items: center;
+  color: var(--white-opacity);
+  display: flex;
+  font-size: 1.5rem;
+  gap: 4px;
+}
+
+.card__user {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.card__user__icon {
+  width: 3.2rem;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+}
+
+.card__user__info {
+  color: var(--white-opacity);
+}
+
+.card__user__info__name {
+  color: var(--white);
+  cursor: pointer;
+}
+
+.card__title:hover,
+.card__user__info__name:hover {
+  color: var(--cyan);
+}
+
+.footer {
+  bottom: 0;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+}
+
+.attribution {
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
